@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>家常番茄炒蛋：十分钟就能做好的下饭菜 - 小林的厨房</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAFAF7; --ink:#26221F; --card:#FFFFFF; --soft:#F2F0EA;
+  --accent:#D63A27; --yolk:#F2B200;
+  --tint:#BFCBA6; --void:#141210; --void-ink:#8C8680;
+  --t:0; --d:0;
+  --bgc:color-mix(in srgb, color-mix(in srgb, var(--paper), var(--tint) calc(var(--t) * 100%)), var(--void) calc(var(--d) * 100%));
+  --fgc:color-mix(in srgb, var(--ink), var(--void-ink) calc(var(--d) * 100%));
+  --mut:color-mix(in srgb, var(--fgc) 58%, transparent);
+  --ln:color-mix(in srgb, var(--fgc) 13%, transparent);
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --brush:"Ma Shan Zheng","STKaiti","KaiTi","Noto Serif SC",serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#171514; --ink:#ECE6DE; --card:#211E1C; --soft:#262220;
+    --accent:#EE5B43; --tint:#2B3324; --void:#000000; --void-ink:#6E6862;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#171514; --ink:#ECE6DE; --card:#211E1C; --soft:#262220;
+  --accent:#EE5B43; --tint:#2B3324; --void:#000000; --void-ink:#6E6862;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bgc);color:var(--fgc);font:17px/1.9 var(--serif)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;
+  background:color-mix(in srgb,var(--bgc) 90%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;font-family:var(--sans);
+  background:color-mix(in srgb,var(--bgc) 90%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.top-in{max-width:1040px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;min-height:56px}
+.logo{display:flex;align-items:center;gap:8px;font:900 19px/1.3 var(--serif);letter-spacing:.02em;min-width:7em;min-height:26px;
+  background:none;border:0;padding:0;color:inherit;cursor:pointer}
+.logo-i{width:1.2em;text-align:center}
+.nav{display:flex;gap:22px;font-size:14px;margin-left:auto}
+.nav span{color:color-mix(in srgb,var(--fgc) 75%,transparent);min-width:2em}
+.rt{font-size:13px;color:var(--mut);min-width:8em;text-align:right}
+.bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ln)}
+.bar i{display:block;height:100%;width:0;background:var(--accent)}
+@media (max-width:620px){
+  .top-in{gap:4px 16px;padding:10px 16px}
+  .nav{order:3;width:100%;margin-left:0;gap:18px;font-size:13px}
+  .rt{margin-left:auto;font-size:12px}
+}
+
+/* page */
+.page{max-width:680px;margin:0 auto;padding:0 20px;overflow-x:clip}
+.sec{padding:56px 0;position:relative}
+.lv0{padding-top:28px}
+h1.title{font-weight:900;font-size:clamp(28px,6vw,40px);line-height:1.32;margin:.35em 0 .55em;text-wrap:balance}
+h2{font-size:24px;font-weight:600;line-height:1.45;margin:0 0 .8em}
+.crumbs{font:13px/1.6 var(--sans);color:var(--mut)}
+.meta{font:14px/1.6 var(--sans);color:var(--mut);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:none;
+  font:500 15px/1 var(--sans);color:var(--fgc);background:hsl(var(--h,10) 65% 55% / .24)}
+.av.sm{width:24px;height:24px;font-size:12px}
+.lead{font-size:18px;margin:0}
+
+.photo{margin:28px 0}
+.frame{border-radius:6px;overflow:hidden;background:#5f3b25}
+.frame svg{display:block;width:100%;height:auto}
+.photo figcaption{font:13px/1.6 var(--sans);color:var(--mut);margin-top:10px}
+
+.ingr{background:var(--soft);border-top:3px solid var(--accent);padding:20px 24px;margin:32px 0 0;border-radius:2px 2px 8px 8px}
+.ingr h3{font:600 17px/1.5 var(--serif);margin:0 0 8px}
+.ingr ul{list-style:none;margin:0;padding:0;font:15px/1.6 var(--sans)}
+.ingr li{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--ln)}
+.ingr li:last-child{border-bottom:0}
+.ingr li>span:last-child{margin-left:auto;color:var(--mut);text-align:right}
+
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:2.1em 1fr;gap:14px;margin:0 0 18px}
+.steps li::before{content:attr(data-n);width:2em;height:2em;border-radius:50%;background:var(--accent);color:#fff;
+  font:700 14px/2em var(--sans);text-align:center;margin-top:.2em}
+.steps p{margin:0}
+
+.tip{margin:28px 0 0;padding:16px 20px;border-radius:8px;font-size:16px;line-height:1.8;
+  background:color-mix(in srgb,var(--yolk) 16%,var(--paper))}
+.tip b{display:block;font:500 14px/1.6 var(--sans);margin-bottom:4px}
+.tip p{margin:0}
+
+.vote{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:32px;font:14px/1.6 var(--sans);color:var(--mut)}
+.btn{font:14px/1.5 var(--sans);color:var(--fgc);background:transparent;border:1px solid color-mix(in srgb,var(--fgc) 24%,transparent);
+  border-radius:999px;padding:6px 14px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn:disabled{opacity:.55;cursor:default}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff;border-radius:8px}
+
+.memo p{margin:0 0 1.1em}
+.lean{transform:rotate(.4deg);transform-origin:left center}
+
+.cmts{font:15px/1.7 var(--sans)}
+.cmt{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--ln);margin-left:var(--off,0px)}
+.cmt.reply{margin-left:calc(48px + var(--off,0px));border-top:0;padding-top:0}
+.ch{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+.ch b{color:var(--fgc);font-weight:500;font-size:14px}
+.tag{font-size:11px;padding:0 6px;border-radius:4px;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
+.cmt p{margin:2px 0 4px}
+.cf{font-size:12px;color:var(--mut)}
+.more{margin-top:18px}
+
+.rel{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:560px){.rel{grid-template-columns:repeat(2,1fr)}}
+.rc{background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:14px;font-family:var(--sans)}
+.rc .em{display:block;font-size:30px;line-height:1.2;height:1.2em}
+.rc b{display:block;font:600 16px/1.5 var(--serif);margin-top:6px;min-height:1.5em}
+.rc small{display:block;color:var(--mut);font-size:13px;line-height:1.5;min-height:1.5em}
+.rc:nth-child(3){transform:rotate(.5deg)}
+.rc:nth-child(4){transform:rotate(-1.4deg) translateY(4px)}
+.rc:nth-child(5){transform:rotate(3deg) translate(4px,10px)}
+.rc:nth-child(6){transform:rotate(-6deg) translate(-6px,22px);opacity:.55;filter:blur(.6px)}
+
+.sub{margin-top:64px;padding:24px;border:1px solid var(--ln);border-radius:10px;font-family:var(--sans)}
+.sub h3{font:600 19px/1.5 var(--serif);margin:0 0 4px}
+.sub>p{margin:0 0 14px;color:var(--mut);font-size:14px}
+.sub .row{display:flex;gap:8px;flex-wrap:wrap}
+.sub input{flex:1 1 200px;min-width:0;font:15px/1.4 var(--sans);padding:9px 12px;border-radius:8px;
+  border:1px solid color-mix(in srgb,var(--fgc) 24%,transparent);background:var(--paper);color:var(--fgc)}
+#subMsg{margin:12px 0 0;font-size:14px;color:var(--fgc);min-height:1.6em}
+
+/* level 5 */
+.v2 .ingr{border-top-style:dashed;transform:rotate(-.7deg)}
+.v2 .steps li:nth-child(5)::before{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.v2 .steps li:nth-child(8)::before{border-radius:2px}
+.wob{animation:wob var(--dur,5s) ease-in-out var(--dl,0s) infinite}
+@keyframes wob{
+  0%,100%{transform:translate(0,0) rotate(0)}
+  30%{transform:translate(calc(var(--a,1) * 1.5px),calc(var(--a,1) * -1px)) rotate(calc(var(--a,1) * .5deg))}
+  70%{transform:translate(calc(var(--a,1) * -1px),calc(var(--a,1) * 1px)) rotate(calc(var(--a,1) * -.4deg))}
+}
+.mir{display:inline-block;transform:scaleX(-1)}
+.brush{font-family:var(--brush);font-size:1.12em}
+
+/* level 6 */
+.me{display:flex;gap:16px;padding:22px;border:1px solid var(--ln);border-radius:10px;margin-bottom:56px}
+.me .av{width:52px;height:52px;font-size:20px}
+.me p{margin:0;font-size:16px;line-height:1.8}
+.caret{display:inline-block;width:2px;height:1.1em;background:currentColor;vertical-align:-.15em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.vert{writing-mode:vertical-rl;height:21em;width:100%;overflow-x:auto;font-family:var(--brush);font-size:21px;line-height:2.1;margin:8px 0 40px}
+.vert p{margin:0 0 0 .5em}
+.vert p:nth-child(2){padding-top:2em}
+.vert p:nth-child(3){padding-top:.5em}
+.vert p:nth-child(4){padding-top:5em}
+.vert p:nth-child(5){padding-top:1em}
+.vert p:nth-child(6){padding-top:9em}
+
+/* level 7 */
+.lv7{overflow:clip}
+.rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.rain i{position:absolute;top:-8%;font-style:normal;color:var(--fgc);animation:fall var(--dur,10s) linear var(--dl,0s) infinite}
+@keyframes fall{to{top:104%}}
+.lv7>*:not(.rain){position:relative;z-index:1}
+.decomp{font-weight:900;font-size:clamp(34px,9vw,60px);line-height:1.25;margin:0 0 44px;white-space:nowrap;overflow:hidden}
+.decomp div{letter-spacing:calc(var(--i) * .2em);opacity:calc(1 - var(--i) * .17);transform:translateX(calc(var(--i) * var(--i) * 5px))}
+.broken{list-style:none;margin:32px 0;padding:0;font:15px/1.6 var(--sans)}
+.broken li{display:flex;padding:8px 0;border-bottom:1px dashed var(--ln)}
+.broken li span:last-child{margin-left:auto}
+.broken li:nth-child(2) span:last-child{transform:translateX(-35%)}
+.broken li:nth-child(3){transform:translateX(18px)}
+.broken li:nth-child(4){flex-direction:row-reverse}
+.broken li:nth-child(4) span:last-child{margin-left:0;margin-right:auto}
+.broken li:nth-child(5){transform:rotate(-2deg);border-bottom-style:solid}
+.broken li:nth-child(6){opacity:.4;transform:translateX(-12px)}
+.stanza{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font-size:28px;line-height:1.3;margin:40px 0 40px 22%}
+.stanza span{display:inline-block;transform:rotate(var(--r))}
+.mirror{transform:scaleX(-1);text-align:right}
+.zal{font-size:26px;line-height:3.2;margin:40px 0 0;text-align:center}
+
+/* level 8 */
+.void{min-height:260vh;overflow-x:clip}
+.follow{position:sticky;top:calc(env(safe-area-inset-top,0px) + 46vh);text-align:center;font-size:18px;letter-spacing:.3em;opacity:.85;z-index:1;margin:0}
+.drift{position:absolute;font-size:20px;opacity:.45;filter:blur(.3px);white-space:nowrap}
+.drift.b{font-size:44px;opacity:.18;filter:blur(2px)}
+.drift.s{font-size:13px;opacity:.35;letter-spacing:.1em}
+
+/* level 9 */
+.end{min-height:100vh;text-align:center;font-family:var(--sans);padding-top:96px}
+.fin{font:15px/1.6 var(--serif);letter-spacing:.4em;color:var(--mut);margin:0}
+.thanks{font:20px/1.7 var(--serif);margin:18px 0 28px}
+.share{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--mut)}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:52px 0 36px;text-align:left}
+.pn>*{border:1px solid var(--ln);border-radius:10px;padding:14px 16px;color:var(--fgc);background:transparent;font:15px/1.5 var(--serif);text-align:left}
+.pn button{cursor:pointer}
+.pn button:hover{border-color:var(--accent)}
+.pn small{display:block;font:12px/1.5 var(--sans);color:var(--mut);margin-bottom:4px}
+.foot{margin-top:64px;font-size:12px;color:var(--mut)}
+
+.toastWrap{position:fixed;left:0;right:0;bottom:0;padding:0 16px calc(24px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;pointer-events:none;z-index:30}
+.toast{background:var(--ink);color:var(--paper);font:14px/1.5 var(--sans);padding:10px 16px;border-radius:8px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.toast.on{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  .wob,.caret{animation:none}
+  .rain i{animation:none}
+  .toast{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <button class="logo" id="logo" aria-label="回到顶部"><span class="logo-i" id="logoI">🍅</span><span id="logoT">小林的厨房</span></button>
+    <nav class="nav" id="nav"><span>首页</span><span>食谱</span><span>关于我</span><span>联系</span></nav>
+    <span class="rt" id="rt">预计阅读 3 分钟</span>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+</header>
+
+<main class="page" id="page">
+
+<!-- 0 -->
+<section class="sec lv0" data-level="0">
+  <div class="crumbs">首页 › 家常菜 › 快手菜</div>
+  <h1 class="title">家常番茄炒蛋：十分钟就能做好的下饭菜</h1>
+  <div class="meta"><span class="av sm" style="--h:12">林</span><span>小林 · 2026年11月3日 · <span id="readTime">阅读约 3 分钟</span> · <span id="cmtCount">128</span> 条评论</span></div>
+
+  <figure class="photo">
+    <div class="frame">
+    <svg viewBox="0 0 640 400" role="img" aria-label="一盘番茄炒蛋，旁边放着一双筷子">
+      <defs>
+        <linearGradient id="wood1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a6644"/><stop offset="1" stop-color="#5f3b25"/></linearGradient>
+        <radialGradient id="plateG1" cx=".5" cy=".42" r=".62"><stop offset="0" stop-color="#ffffff"/><stop offset=".78" stop-color="#f3f0ea"/><stop offset="1" stop-color="#d6d0c4"/></radialGradient>
+        <radialGradient id="eggG1" cx=".38" cy=".32" r=".85"><stop offset="0" stop-color="#ffe680"/><stop offset=".55" stop-color="#f7c847"/><stop offset="1" stop-color="#df9d1c"/></radialGradient>
+        <linearGradient id="tomG1" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#f0603f"/><stop offset="1" stop-color="#b3241a"/></linearGradient>
+        <filter id="lumpy1" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G"/></filter>
+        <filter id="soft1" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter>
+      </defs>
+      <rect width="640" height="400" fill="url(#wood1)"/>
+      <g fill="none" stroke="#2a1509" stroke-opacity=".2" stroke-width="2">
+        <path d="M0 52 C150 40 330 66 640 46"/><path d="M0 118 C200 128 380 102 640 122"/><path d="M0 196 C180 186 420 210 640 192"/><path d="M0 274 C210 284 400 262 640 280"/><path d="M0 348 C160 338 360 360 640 342"/>
+      </g>
+      <ellipse cx="334" cy="226" rx="236" ry="146" fill="#000" opacity=".35" filter="url(#soft1)"/>
+      <ellipse cx="320" cy="206" rx="240" ry="150" fill="url(#plateG1)"/>
+      <ellipse cx="320" cy="208" rx="186" ry="112" fill="#f7f4ef" stroke="#e2dccf" stroke-width="3"/>
+      <ellipse cx="322" cy="214" rx="150" ry="82" fill="#d2452a" opacity=".32" filter="url(#soft1)"/>
+      <g filter="url(#lumpy1)">
+        <g fill="url(#eggG1)">
+          <ellipse cx="258" cy="182" rx="58" ry="36"/><ellipse cx="364" cy="172" rx="54" ry="33"/><ellipse cx="302" cy="246" rx="66" ry="34"/>
+          <ellipse cx="394" cy="238" rx="44" ry="29"/><ellipse cx="226" cy="238" rx="40" ry="25"/><ellipse cx="318" cy="150" rx="34" ry="20"/>
+        </g>
+        <g fill="url(#tomG1)" stroke="#c3301f" stroke-width="6" stroke-linejoin="round">
+          <polygon points="296,192 338,182 350,210 318,226 294,214"/><polygon points="200,204 238,196 246,222 212,232"/>
+          <polygon points="380,198 420,192 430,220 396,232"/><polygon points="330,262 368,254 374,280 338,288"/>
+          <polygon points="266,150 298,144 306,168 274,176"/><polygon points="420,158 450,168 442,192 414,186"/>
+          <polygon points="240,262 270,258 272,282 244,286"/>
+        </g>
+      </g>
+      <g fill="#fff" opacity=".45">
+        <ellipse cx="316" cy="196" rx="8" ry="3.5"/><ellipse cx="220" cy="206" rx="6" ry="3"/><ellipse cx="400" cy="203" rx="6" ry="3"/>
+        <ellipse cx="348" cy="263" rx="6" ry="3"/><ellipse cx="282" cy="153" rx="6" ry="3"/><ellipse cx="432" cy="170" rx="5" ry="2.5"/>
+      </g>
+      <g fill="#5c9e45" stroke="#86c06c" stroke-width="1.5">
+        <circle cx="280" cy="200" r="4.5"/><circle cx="350" cy="232" r="4.5"/><circle cx="244" cy="190" r="4"/><circle cx="398" cy="180" r="4.5"/>
+        <circle cx="310" cy="170" r="4"/><circle cx="270" cy="258" r="4.5"/><circle cx="372" cy="250" r="4"/><circle cx="332" cy="205" r="4"/>
+      </g>
+      <rect x="40" y="350" width="330" height="9" rx="4.5" fill="#d8b47a" transform="rotate(-7 205 354)"/>
+      <rect x="48" y="366" width="330" height="9" rx="4.5" fill="#cfa96d" transform="rotate(-5 213 370)"/>
+    </svg>
+    </div>
+    <figcaption id="cap1" data-rot>成品图：酸甜适口，汤汁拌饭一绝。</figcaption>
+  </figure>
+
+  <p class="lead" data-rot>番茄炒蛋大概是很多人学会的第一道菜。材料简单，步骤也不复杂，但想做得好吃，还是有几个小细节要注意。今天把我家常用的做法分享给大家，新手也能一次成功。</p>
+
+  <div class="ingr">
+    <h3>用料（2人份）</h3>
+    <ul>
+      <li><span>番茄</span><span>2个（约300克）</span></li>
+      <li><span>鸡蛋</span><span>3个</span></li>
+      <li><span>盐</span><span>1/2小勺</span></li>
+      <li><span>白糖</span><span>1小勺</span></li>
+      <li><span>葱花</span><span>少许</span></li>
+      <li><span>食用油</span><span>2大勺</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 1 -->
+<section class="sec lv1" data-level="1">
+  <h2>做法</h2>
+  <ol class="steps">
+    <li data-n="1"><p data-rot>番茄顶部划十字，用开水烫一分钟，撕掉皮后切成小块。</p></li>
+    <li data-n="2"><p data-rot>鸡蛋打入碗中，加一点点盐，用筷子朝一个方向搅打均匀。</p></li>
+    <li data-n="3"><p data-rot>热锅倒油，油温七成热时倒入蛋液。等边缘凝固后轻轻推散，炒到嫩滑就盛出来备用。</p></li>
+    <li data-n="4"><p data-rot>锅里留底油，放入番茄块中火翻炒，炒出汤汁后加盐和白糖调味。</p></li>
+    <li data-n="5"><p data-rot>倒回鸡蛋翻炒均匀，撒上葱花就可以出锅了。</p></li>
+  </ol>
+  <aside class="tip">
+    <b>💡 小贴士</b>
+    <p id="tipText" data-rot>番茄一定要选熟透的，沙瓤的最好。如果番茄不够熟，可以加一小勺番茄酱。另外，炒的时候尽量不要和番茄对视。</p>
+  </aside>
+  <div class="vote">
+    <span>这篇食谱对你有帮助吗？</span>
+    <button class="btn" id="up">👍 有帮助 <b id="upN">342</b></button>
+    <button class="btn" id="down">👎 没帮助 <b id="downN">3</b></button>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="sec lv2 memo" data-level="2">
+  <h2>一点碎碎念</h2>
+  <p data-rot>这道菜是我外婆教我的。小时候每到周末，我就搬个小板凳坐在厨房门口，看她做饭。</p>
+  <p data-rot>外婆打鸡蛋的时候总要数数，一直数到四十。她说四十下刚刚好，多一下少一下都不行。</p>
+  <p data-rot>后来我自己学着数。每次数到四十，碗里还会再响一下。</p>
+  <p data-rot>我问过外婆那是什么。她说，那是第四十一下，不用管它。</p>
+  <p class="lean" data-rot>外婆家的厨房朝南，下午的阳光特别好。我记得很清楚，因为那扇窗户一直朝南，不管你从哪边看。</p>
+</section>
+
+<!-- 3 -->
+<section class="sec lv3" data-level="3">
+  <h2>评论（<span id="cmtCount2">128</span>）</h2>
+  <div class="cmts" id="cmts">
+    <div class="cmt"><span class="av" style="--h:340">晴</span><div><div class="ch"><b>晴天小猪</b><span>2天前</span></div><p data-rot>照着做了，第一次就成功了！老公说比外面餐馆的还好吃 👍</p><div class="cf">赞 32　回复</div></div></div>
+    <div class="cmt"><span class="av" style="--h:280">m</span><div><div class="ch"><b>momo酱</b><span>2天前</span></div><p data-rot>请问白糖可以换成冰糖吗？</p><div class="cf">赞 4　回复</div></div></div>
+    <div class="cmt reply"><span class="av" style="--h:12">林</span><div><div class="ch"><b>小林的厨房</b><span class="tag">作者</span><span>2天前</span></div><p data-rot>可以的，冰糖要提前压碎哦～</p></div></div>
+    <div class="cmt"><span class="av" style="--h:200">陈</span><div><div class="ch"><b>老陈</b><span>1天前</span></div><p data-rot>烫番茄去皮那一步太实用了，以前一直不知道怎么弄。</p><div class="cf">赞 17　回复</div></div></div>
+    <div class="cmt"><span class="av" style="--h:110">西</span><div><div class="ch"><b>一颗西兰花</b><span>18小时前</span></div><p data-rot>我数到四十的时候，碗里也响了一下。这是正常的吗？</p><div class="cf">赞 9　回复</div></div></div>
+    <div class="cmt reply"><span class="av" style="--h:12">林</span><div><div class="ch"><b>小林的厨房</b><span class="tag">作者</span><span>18小时前</span></div><p data-rot>是正常的。</p></div></div>
+    <div class="cmt"><span class="av" style="--h:0;filter:grayscale(1)">匿</span><div><div class="ch"><b>匿名用户</b><span>3小时前</span></div><p data-rot>我也是</p></div></div>
+    <div class="cmt"><span class="av" style="--h:0;filter:grayscale(1)">匿</span><div><div class="ch"><b>匿名用户</b><span>3小时前</span></div><p data-rot>我也是</p></div></div>
+    <div class="cmt" style="--off:8px"><span class="av" style="--h:0;filter:grayscale(1)">匿</span><div><div class="ch"><b>匿名用户</b><span>明天</span></div><p data-rot>我也是</p></div></div>
+    <div class="cmt"><span class="av" style="--h:340">晴</span><div><div class="ch"><b>晴天小猪</b><span>刚刚</span></div><p data-rot>又做了一次。老公说比外面的好吃。我没有老公。</p><div class="cf">赞 0　回复</div></div></div>
+    <div class="cmt" style="--off:4px"><span class="av" style="--h:40">路</span><div><div class="ch"><b>路过</b><span>不详</span></div><p data-rot>请问作者还在吗？</p></div></div>
+    <div class="cmt reply"><span class="av" style="--h:12">林</span><div><div class="ch"><b>小林的厨房</b><span class="tag">作者</span><span>不详</span></div><p data-rot>在。</p></div></div>
+    <div class="cmt" style="--off:16px"><span class="av" style="--h:40">路</span><div><div class="ch"><b>路过</b><span>不详</span></div><p data-rot>请问作者还在吗？</p></div></div>
+    <div class="cmt reply" style="--off:16px"><span class="av" style="--h:12">林</span><div><div class="ch"><b>小林的厨房</b><span class="tag">作者</span><span>不详</span></div><p data-rot>在。在。</p></div></div>
+  </div>
+  <button class="btn more" id="more">加载更多评论</button>
+</section>
+
+<!-- 4 -->
+<section class="sec lv4" data-level="4">
+  <h2 data-rot>猜你喜欢</h2>
+  <div class="rel">
+    <div class="rc"><span class="em">🥩</span><b data-rot>红烧肉</b><small data-rot>肥而不腻，入口即化</small></div>
+    <div class="rc"><span class="em">🥬</span><b data-rot>蒜蓉炒青菜</b><small data-rot>三分钟出锅</small></div>
+    <div class="rc"><span class="em">🍳</span><b data-rot>蛋炒番茄</b><small data-rot>和番茄炒蛋不是一道菜</small></div>
+    <div class="rc"><span class="em">🍅</span><b data-rot>番茄炒番茄</b><small data-rot>适合想念番茄的时候</small></div>
+    <div class="rc"><span class="em">🔥</span><b data-rot>炒</b><small data-rot>只有炒</small></div>
+    <div class="rc"><span class="em"></span><b data-rot>在锅里的感觉</b><small>　</small></div>
+  </div>
+
+  <div class="sub">
+    <h3>订阅小林的厨房</h3>
+    <p>每周二更新一道家常菜，直接发到你的邮箱。</p>
+    <div class="row">
+      <input id="subIn" type="email" placeholder="你的邮箱" aria-label="你的邮箱">
+      <button class="btn solid" id="subBtn">订阅</button>
+    </div>
+    <p id="subMsg" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="sec lv5 v2" data-level="5">
+  <h2 data-rot>番茄炒蛋（第二版）</h2>
+  <p data-rot>上一版写得不够清楚，我重新整理了一下。这次应该没问题了。</p>
+  <div class="ingr">
+    <h3 data-rot>用料（2人份，或者更多）</h3>
+    <ul>
+      <li class="wob" style="--a:.6;--dur:6s"><span data-rot>番茄</span><span data-rot>2个</span></li>
+      <li><span data-rot>鸡蛋</span><span data-rot>3个</span></li>
+      <li class="wob" style="--a:1;--dur:4.5s;--dl:-1s"><span data-rot>盐</span><span data-rot>和记忆里一样多</span></li>
+      <li><span data-rot>白糖</span><span data-rot>1小勺，或者一个下午</span></li>
+      <li class="wob" style="--a:1.4;--dur:5.2s;--dl:-2s"><span data-rot>葱花</span><span data-rot>少许（它们会自己数）</span></li>
+      <li><span data-rot>你</span><span data-rot>1位</span></li>
+      <li class="wob" style="--a:2.2;--dur:3.8s"><span data-rot>周二</span><span class="brush" data-rot>少许，切丁</span></li>
+      <li><span data-rot>食用油</span><span><span class="mir">2大勺</span>，或一面很安静的湖</span></li>
+    </ul>
+  </div>
+  <h2 data-rot style="margin-top:48px">做法</h2>
+  <ol class="steps">
+    <li data-n="1"><p data-rot>番茄顶部划十字。番茄会记住这个十字。</p></li>
+    <li data-n="2"><p data-rot>鸡蛋打入碗中，朝一个方向搅打。另一个方向也有人在搅打，不用理会。</p></li>
+    <li data-n="3"><p data-rot>热锅，冷油，冷你。</p></li>
+    <li data-n="3" class="wob" style="--a:1.3;--dur:4s"><p data-rot>热锅，冷油，冷你。</p></li>
+    <li data-n="3½"><p data-rot>等。</p></li>
+    <li data-n="7"><p data-rot>把鸡蛋倒回去，倒回到它们还是鸡蛋之前。</p></li>
+    <li data-n="甲"><p class="brush" data-rot>撒上葱花。葱花落下来的时间，会比你想的长一点。</p></li>
+    <li data-n="底"><p class="mir" data-rot>出锅。锅出。出。</p></li>
+  </ol>
+  <figure class="photo">
+    <div class="frame">
+    <svg viewBox="-200 -150 400 300" role="img" aria-label="盘子里有一个盘子，那个盘子里还有一个盘子">
+      <defs>
+        <g id="layer">
+          <ellipse rx="300" ry="220" fill="#e7e1d6"/>
+          <ellipse rx="258" ry="189" fill="#faf8f4"/>
+          <ellipse rx="258" ry="189" fill="none" stroke="#d9d2c4" stroke-width="5"/>
+          <ellipse cx="222" cy="-4" rx="20" ry="14" fill="#cf3a25"/>
+          <ellipse cx="214" cy="13" rx="12" ry="8" fill="#f2bd3b"/>
+          <ellipse cx="-222" cy="2" rx="22" ry="15" fill="#f2bd3b"/>
+          <ellipse cx="-212" cy="-13" rx="11" ry="8" fill="#cf3a25"/>
+          <circle cx="-200" cy="15" r="4" fill="#5c9e45"/>
+        </g>
+      </defs>
+      <rect x="-200" y="-150" width="400" height="300" fill="#e7e1d6"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" from="1" to="1.6129" dur="7s" repeatCount="indefinite"/>
+        <use href="#layer"/>
+        <use href="#layer" transform="scale(.62)"/>
+        <use href="#layer" transform="scale(.3844)"/>
+        <use href="#layer" transform="scale(.2383)"/>
+        <use href="#layer" transform="scale(.1478)"/>
+        <use href="#layer" transform="scale(.0916)"/>
+        <use href="#layer" transform="scale(.0568)"/>
+        <use href="#layer" transform="scale(.0352)"/>
+        <use href="#layer" transform="scale(.0218)"/>
+        <use href="#layer" transform="scale(.0135)"/>
+      </g>
+    </svg>
+    </div>
+    <figcaption data-rot>成品图（局部放大）</figcaption>
+  </figure>
+</section>
+
+<!-- 6 -->
+<section class="sec lv6" data-level="6">
+  <h2 data-rot>关于我</h2>
+  <div class="me">
+    <span class="av" style="--h:12">林</span>
+    <div>
+      <p data-rot>我是小林，一个喜欢做饭的普通上班族。</p>
+      <p data-rot>我是小林，一个喜欢做饭的。</p>
+      <p data-rot>我是小林，一个喜欢。</p>
+      <p data-rot>我是小林，一个。</p>
+      <p data-rot>我是小林。</p>
+      <p data-rot>我是。</p>
+      <p data-rot>是。</p>
+      <p><span class="caret"></span></p>
+    </div>
+  </div>
+  <h2 data-rot>注意事项</h2>
+  <div class="vert">
+    <p data-rot>番茄是一种鸡蛋，在它还记得自己是红色的时候。</p>
+    <p data-rot>盐的用量，等于你上次梦见楼梯的次数。</p>
+    <p data-rot>每一口锅里，都有另一口锅。</p>
+    <p data-rot>请不要在厨房里数到四十一。</p>
+    <p data-rot>葱花是落下来的，还是被锅接住的？</p>
+    <p data-rot>这一页没有上一页。</p>
+  </div>
+  <figure class="photo">
+    <div class="frame">
+    <svg id="eyeSvg" viewBox="-200 -150 400 300" role="img" aria-label="一盘番茄炒蛋，摆成了一只眼睛的样子">
+      <defs>
+        <linearGradient id="wood2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8d5c3d"/><stop offset="1" stop-color="#4f301e"/></linearGradient>
+        <radialGradient id="eggG2" cx=".45" cy=".35" r=".8"><stop offset="0" stop-color="#ffe680"/><stop offset=".6" stop-color="#f6c443"/><stop offset="1" stop-color="#dc9a1b"/></radialGradient>
+        <radialGradient id="tomG2" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#f26b48"/><stop offset="1" stop-color="#a81f16"/></radialGradient>
+        <filter id="lumpy2" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter>
+        <filter id="soft2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
+        <clipPath id="eyeClip"><path d="M-118 0 Q0 -96 118 0 Q0 96 -118 0Z"/></clipPath>
+      </defs>
+      <rect x="-200" y="-150" width="400" height="300" fill="url(#wood2)"/>
+      <g fill="none" stroke="#2a1509" stroke-opacity=".2" stroke-width="2">
+        <path d="M-200 -110 C-60 -122 80 -98 200 -114"/><path d="M-200 -40 C-40 -30 100 -52 200 -36"/><path d="M-200 60 C-80 50 90 72 200 54"/><path d="M-200 124 C-40 134 80 112 200 128"/>
+      </g>
+      <ellipse cx="8" cy="16" rx="176" ry="122" fill="#000" opacity=".35" filter="url(#soft2)"/>
+      <ellipse rx="178" ry="124" fill="#ece7dd"/>
+      <ellipse cy="2" rx="140" ry="94" fill="#f8f6f1" stroke="#e1dbcf" stroke-width="2.5"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="1 1;1 1;1 .06;1 1;1 1" keyTimes="0;.9;.94;.98;1" dur="5.5s" repeatCount="indefinite"/>
+        <path d="M-118 0 Q0 -96 118 0 Q0 96 -118 0Z" fill="url(#eggG2)" filter="url(#lumpy2)"/>
+        <g clip-path="url(#eyeClip)">
+          <g id="iris">
+            <circle r="38" fill="url(#tomG2)" filter="url(#lumpy2)"/>
+            <circle r="14" fill="#2b130d"/>
+            <circle cx="-11" cy="-12" r="6" fill="#fff" opacity=".85"/>
+          </g>
+        </g>
+        <g stroke="#5c9e45" stroke-width="5" stroke-linecap="round">
+          <line x1="-70" y1="-31" x2="-84" y2="-48"/><line x1="-35" y1="-44" x2="-41" y2="-63"/><line x1="0" y1="-48" x2="0" y2="-68"/>
+          <line x1="35" y1="-44" x2="41" y2="-63"/><line x1="70" y1="-31" x2="84" y2="-48"/>
+        </g>
+      </g>
+    </svg>
+    </div>
+    <figcaption data-rot>成品图（请勿对视）</figcaption>
+  </figure>
+</section>
+
+<!-- 7 -->
+<section class="sec lv7" data-level="7">
+  <div class="rain" id="rain" aria-hidden="true"></div>
+  <h2 data-rot>做法（简化版）</h2>
+  <div class="decomp" aria-hidden="true">
+    <div style="--i:0">番茄炒蛋</div>
+    <div style="--i:1">釆田艹加火少疋虫</div>
+    <div style="--i:2">丿丶丨一乙丶丶</div>
+    <div style="--i:3">丶　丨　丿</div>
+    <div style="--i:4">　丶</div>
+  </div>
+  <p data-rot>把雨切成小块。把小块切成昨天。昨天熟了以后，会自己从锅边滑下来，像一个没有说完的名字。</p>
+  <ul class="broken">
+    <li><span data-rot>番茄</span><span data-rot>番茄</span></li>
+    <li><span data-rot>鸡蛋</span><span data-rot>2个番茄</span></li>
+    <li><span data-rot>盐盐</span><span data-rot>盐</span></li>
+    <li><span data-rot>适量</span><span data-rot>你</span></li>
+    <li><span>——</span><span>——</span></li>
+    <li><span></span><span data-rot>（空）</span></li>
+  </ul>
+  <p data-rot>厨房朝南。南朝厨房。房厨南朝朝。</p>
+  <div class="stanza" aria-hidden="true">
+    <span style="--r:0deg">番茄</span>
+    <span style="--r:7deg">茄番</span>
+    <span style="--r:-15deg">番　番</span>
+    <span style="--r:33deg">田</span>
+    <span style="--r:-72deg">口</span>
+    <span style="--r:180deg">丶</span>
+  </div>
+  <p data-rot>我们有番茄，我们有鸡蛋。我们有的东西越来越多，但它们越来越不像东西。</p>
+  <p data-rot>四十。四十一。四十。四十一。四十一。四十一。</p>
+  <p data-rot>。下往续继请，热还锅</p>
+  <p class="mirror" data-rot>我数到了四十一。</p>
+  <p class="zal" data-zalgo="请继续往下">请继续往下</p>
+</section>
+
+<!-- 8 -->
+<section class="sec lv8 void" data-level="8">
+  <p class="follow" id="follow">你还在往下滑。</p>
+  <span class="drift" style="top:8%;left:12%" data-rot>锅</span>
+  <span class="drift" style="top:17%;left:62%" data-rot>还热着</span>
+  <span class="drift b" style="top:29%;left:28%">四十一</span>
+  <span class="drift" style="top:41%;left:80%" data-rot>南</span>
+  <span class="drift s" style="top:53%;left:6%">（这里本来有一句话）</span>
+  <span class="drift b" style="top:64%;left:56%">番</span>
+  <span class="drift" style="top:76%;left:22%" data-rot>嘘</span>
+  <span class="drift s" style="top:88%;left:60%" data-rot>你也是吗</span>
+</section>
+
+<!-- 9 -->
+<section class="sec lv9 end" data-level="9">
+  <p class="fin">— 完 —</p>
+  <p class="thanks" data-rot>感谢阅读！如果这道菜对你有帮助，请把它忘掉。</p>
+  <div class="share">
+    <span>分享到</span>
+    <button class="btn" data-toast="已复制链接。请不要粘贴。">微信</button>
+    <button class="btn" data-toast="已分享给 0 位关注者。">微博</button>
+    <button class="btn" data-toast="已发送。外婆说：数到四十就够了。">外婆</button>
+  </div>
+  <nav class="pn">
+    <span><small>上一篇</small>（无）</span>
+    <button id="nextLink"><small>下一篇</small>家常番茄炒蛋：十分钟就能做好的下饭菜</button>
+  </nav>
+  <button class="btn" id="toTop">回到顶部</button>
+  <p class="foot" data-rot>© 2026 小林的厨房　保留所有番茄</p>
+</section>
+
+</main>
+
+<div class="toastWrap" aria-live="polite"><div class="toast" id="toast"></div></div>
+
+<script>
+(function(){
+  var $ = function(s){return document.querySelector(s);};
+  var $$ = function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
+  var root = document.documentElement;
+  var page = $('#page');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var secs = $$('section[data-level]');
+  var t0 = Date.now();
+  var returned = false, maxLv = 0, shownLv = -1, lastF = 0;
+  function clamp(v,a,b){return Math.min(b,Math.max(a,v));}
+  function pick(s){return s[Math.floor(Math.random()*s.length)];}
+
+  /* ---------- header states ---------- */
+  var T0 = '家常番茄炒蛋：十分钟就能做好的下饭菜 - 小林的厨房';
+  var N0 = ['首页','食谱','关于我','联系'];
+  var HEAD = [
+    {i:'🍅', logo:'小林的厨房', nav:N0, rt:'预计阅读 3 分钟', title:T0},
+    {i:'🍅', logo:'小林的厨房', nav:N0, rt:'预计阅读 3 分钟', title:T0},
+    {i:'🍅', logo:'小林的厨房', nav:N0, rt:'预计阅读 4 分钟', title:T0},
+    {i:'🍅', logo:'小林的厨房', nav:['首页','食谱','关于我','联系我'], rt:'预计阅读 7 分钟', title:'家常番茄炒蛋 - 小林的厨房'},
+    {i:'🍅', logo:'小林的厨房房', nav:['首页','食谱','关于你','联系'], rt:'预计阅读 1 小时', title:'番茄炒蛋炒蛋 - 小林的厨房'},
+    {i:'🍅', logo:'小林的的厨房', nav:['首页','首页','首页','联系'], rt:'预计阅读 一个下午', title:'番茄炒蛋（第二版）'},
+    {i:'🍅', logo:'小 林 的 厨', nav:['页首','谱食','我于关','系联'], rt:'预计阅读 很久', title:'番茄 是 一种 鸡蛋'},
+    {i:'●', logo:'厨', nav:['頁','頁','頁','頁'], rt:'已读完', title:'釆田艹加火少疋虫'},
+    {i:'', logo:'', nav:['','','',''], rt:'未开始', title:'　'},
+    {i:'🍅', logo:'小林的厨房', nav:N0, rt:'感谢阅读', title:T0}
+  ];
+  var logoI = $('#logoI'), logoT = $('#logoT'), navEls = $$('#nav span'), rtEl = $('#rt'), bar = $('#bar'), follow = $('#follow');
+
+  function setHead(lv){
+    if (lv === shownLv) return;
+    shownLv = lv;
+    var h = HEAD[lv];
+    logoI.textContent = h.i;
+    logoT.textContent = h.logo;
+    navEls.forEach(function(el,i){ el.textContent = h.nav[i]; });
+    rtEl.textContent = h.rt;
+    document.title = h.title;
+  }
+
+  /* ---------- scroll-driven state ---------- */
+  var lastBarJitter = 0, barW = 0;
+  function update(){
+    var mid = innerHeight * 0.45, lv = 0, f = 0;
+    for (var k = 0; k < secs.length; k++){
+      var r = secs[k].getBoundingClientRect();
+      if (r.top <= mid){ lv = +secs[k].dataset.level; f = clamp((mid - r.top) / Math.max(1, r.height), 0, 1); }
+    }
+    var L = lv + f;
+    var back = L >= 9 ? clamp(1 - (L - 9) / 0.25, 0, 1) : 1;
+    var t = clamp((L - 3.6) / 3, 0, 1) * 0.42 * back;
+    var d = L >= 9 ? back : clamp((L - 7.25) / 0.9, 0, 1);
+    root.style.setProperty('--t', t.toFixed(3));
+    root.style.setProperty('--d', d.toFixed(3));
+
+    var g = L < 9 ? clamp((L - 4.6) / 2.4, 0, 1) * (1 - d * 0.7) : 0;
+    page.style.textShadow = g > 0.01
+      ? (g*2).toFixed(2)+'px 0 rgba(220,50,40,'+(g*.45).toFixed(2)+'), '+(-g*2).toFixed(2)+'px 0 rgba(30,170,180,'+(g*.45).toFixed(2)+')'
+      : '';
+
+    var lvl = Math.min(9, Math.floor(L));
+    if (lvl > maxLv) maxLv = lvl;
+    setHead(lvl);
+
+    var p = clamp(scrollY / Math.max(1, root.scrollHeight - innerHeight), 0, 1);
+    var now = performance.now();
+    if (reduce || lvl < 5) barW = p;
+    else if (lvl === 5) barW = clamp(p + Math.sin(now / 90) * 0.03, 0, 1);
+    else if (lvl === 6) barW = 1 - p;
+    else if (lvl === 7){ if (now - lastBarJitter > 180){ barW = Math.random(); lastBarJitter = now; } }
+    else if (lvl === 8) barW = 0;
+    else barW = 1;
+    bar.style.width = (barW * 100).toFixed(2) + '%';
+
+    if (lvl === 8){
+      var txt = f < .22 ? '你还在往下滑。' : f < .45 ? '你还在。' : f < .66 ? '你。' : f < .86 ? '……' : '好。';
+      if (follow.textContent !== txt) follow.textContent = txt;
+    }
+    lastF = lvl;
+    if (!returned && maxLv >= 9 && lvl <= 1) applyReturned();
+  }
+
+  /* ---------- text corruption ---------- */
+  var MAP = {
+    '番':'釆田翻審蕃','茄':'加艹茹笳伽','炒':'火少吵抄秒','蛋':'疋虫旦但','鸡':'又鸟鳮','盐':'皿卜监','糖':'米唐塘',
+    '锅':'钅呙祸蜗','油':'氵由曲抽','你':'尔伱亻妳','我':'找戈手','的':'白勺约','是':'早疋昰','了':'子孑','一':'二丨',
+    '人':'入八','家':'宀豕冢','吃':'乞口气','在':'左存土','不':'木丕下','外':'夕卜','婆':'波女','厨':'厂豆','房':'户方',
+    '葱':'艹忽','花':'化艹','南':'十冂','窗':'穴囱','四':'口儿','十':'一丨','说':'兑讠','看':'手目','红':'纟工',
+    '火':'丷人','做':'估攵','菜':'艹采','雨':'冂丶','天':'二人','名':'夕口','字':'宀子','门':'冂','东':'七小','西':'覀'
+  };
+  var STROKES = '丶丨丿乙亅亠冖冫几凵刂勹匕匚卜卩厂厶又廴彐彡彳忄扌氵犭纟艹辶阝钅饣〇〻口囗';
+  var PUNCT = /[\s，。、：；！？（）“”‘’·…—～\-0-9a-zA-Z%\/]/;
+  var LVK = [0, 0, .012, .07, .15, .32, .45, .8, .9, .02];
+
+  function mutate(o, c, k){
+    var n = o.length, i = Math.floor(Math.random() * n), ch = o[i];
+    if (PUNCT.test(ch)){ if (k > .6 && Math.random() < .3) c[i] = pick('·。、…丶'); return; }
+    if (k < .3 && Math.random() < .65){
+      var j = i + 1;
+      if (j < n && !PUNCT.test(o[j])){ c[i] = o[j]; c[j] = o[i]; }
+      return;
+    }
+    var r = Math.random();
+    if (MAP[ch] && r < .6) c[i] = pick(MAP[ch]);
+    else if (k > .45 && r < .85) c[i] = pick(STROKES);
+    else c[i] = o[Math.floor(Math.random() * n)];
+  }
+
+  var rot = $$('[data-rot]').map(function(el){
+    var s = Array.from(el.textContent);
+    var it = {el:el, o:s, c:s.slice(), lv:+el.closest('section').dataset.level, vis:false};
+    el.__it = it;
+    return it;
+  });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.target.__it) e.target.__it.vis = e.isIntersecting; else e.target.__vis = e.isIntersecting; });
+  }, {rootMargin:'120px 0px'});
+  rot.forEach(function(it){ io.observe(it.el); });
+
+  function setOrig(el, s){
+    el.textContent = s;
+    if (el.__it){ el.__it.o = Array.from(s); el.__it.c = Array.from(s); }
+  }
+
+  function tick(){
+    for (var q = 0; q < rot.length; q++){
+      var it = rot[q];
+      if (!it.vis) continue;
+      var k = LVK[it.lv];
+      if (returned && it.lv <= 2) k = Math.max(k, .02);
+      var o = it.o, c = it.c, n = o.length;
+      if (!n) continue;
+      var changed = false, rp = .35 - .3 * k;
+      for (var i = 0; i < n; i++){ if (c[i] !== o[i] && Math.random() < rp){ c[i] = o[i]; changed = true; } }
+      if (k > 0 && Math.random() < k){
+        var m = 1 + Math.floor(Math.random() * k * k * n * .12);
+        for (var j = 0; j < m; j++) mutate(o, c, k);
+        changed = true;
+      }
+      if (changed) it.el.textContent = c.join('');
+    }
+  }
+  setInterval(tick, reduce ? 700 : 120);
+
+  /* ---------- zalgo ---------- */
+  var zals = $$('[data-zalgo]');
+  zals.forEach(function(z){ io.observe(z); });
+  function zalgo(s){
+    return Array.from(s).map(function(ch){
+      var out = ch, m = 2 + Math.floor(Math.random() * 4);
+      for (var j = 0; j < m; j++) out += String.fromCharCode(0x300 + Math.floor(Math.random() * 0x70));
+      return out;
+    }).join('');
+  }
+  zals.forEach(function(z){ z.textContent = zalgo(z.dataset.zalgo); });
+  setInterval(function(){ zals.forEach(function(z){ if (z.__vis) z.textContent = zalgo(z.dataset.zalgo); }); }, reduce ? 2000 : 260);
+
+  /* ---------- radical rain ---------- */
+  var rain = $('#rain'), RP = '丿丶丨一乙亅亠冖冫几凵刂勹匕卜卩厂厶又艹氵火口田虫疋少加釆旦';
+  for (var ri = 0; ri < 34; ri++){
+    var e = document.createElement('i');
+    e.textContent = pick(RP);
+    e.style.left = (Math.random() * 94).toFixed(1) + '%';
+    e.style.fontSize = (14 + Math.floor(Math.random() * 24)) + 'px';
+    e.style.opacity = (.12 + Math.random() * .33).toFixed(2);
+    var dur = 7 + Math.random() * 12;
+    e.style.setProperty('--dur', dur.toFixed(1) + 's');
+    e.style.setProperty('--dl', (-Math.random() * dur).toFixed(1) + 's');
+    if (reduce) e.style.top = (Math.random() * 95).toFixed(1) + '%';
+    rain.appendChild(e);
+  }
+
+  /* ---------- the eye ---------- */
+  var eye = $('#eyeSvg'), iris = $('#iris'), ix = 0, iy = 0, px = -1, py = -1, lastMove = 0;
+  addEventListener('pointermove', function(ev){ px = ev.clientX; py = ev.clientY; lastMove = performance.now(); }, {passive:true});
+  function eyeStep(){
+    var r = eye.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    var tx = innerWidth / 2, ty = innerHeight * .42;
+    if (px >= 0 && performance.now() - lastMove < 3000){ tx = px; ty = py; }
+    var dx = tx - cx, dy = ty - cy, dist = Math.hypot(dx, dy) || 1, m = Math.min(1, dist / 260);
+    var gx = dx / dist * 30 * m, gy = dy / dist * 16 * m;
+    ix += (gx - ix) * .12; iy += (gy - iy) * .12;
+    iris.setAttribute('transform', 'translate(' + ix.toFixed(2) + ' ' + iy.toFixed(2) + ')');
+  }
+  if (reduce) $$('svg').forEach(function(s){ if (s.pauseAnimations) s.pauseAnimations(); });
+
+  /* ---------- comments ---------- */
+  var list = $('#cmts'), cc = 128;
+  function setCount(){ $('#cmtCount').textContent = cc; $('#cmtCount2').textContent = cc; }
+  function addComment(o, prepend){
+    var d = document.createElement('div'); d.className = 'cmt';
+    var av = document.createElement('span'); av.className = 'av'; av.style.setProperty('--h', o.h); av.textContent = o.av;
+    var b = document.createElement('div');
+    var hd = document.createElement('div'); hd.className = 'ch';
+    var nm = document.createElement('b'); nm.textContent = o.name; hd.appendChild(nm);
+    if (o.author){ var tg = document.createElement('span'); tg.className = 'tag'; tg.textContent = '作者'; hd.appendChild(tg); }
+    var tm = document.createElement('span'); tm.textContent = o.time; hd.appendChild(tm);
+    var p = document.createElement('p'); p.textContent = o.text;
+    b.appendChild(hd); b.appendChild(p); d.appendChild(av); d.appendChild(b);
+    if (prepend) list.insertBefore(d, list.firstChild); else list.appendChild(d);
+    cc++; setCount();
+  }
+  var more = $('#more'), mc = 0;
+  more.addEventListener('click', function(){
+    mc++;
+    if (mc === 1) addComment({h:0, av:'匿', name:'匿名用户', time:'现在', text:'你点了。'});
+    else if (mc === 2) addComment({h:0, av:'匿', name:'匿名用户', time:'现在', text:'你又点了。'});
+    else if (mc === 3){ addComment({h:12, av:'林', name:'小林的厨房', author:true, time:'现在', text:'没有更多评论了。'}); more.textContent = '加载更少评论'; }
+    else {
+      if (list.lastElementChild){ list.removeChild(list.lastElementChild); cc--; setCount(); }
+      if (!list.lastElementChild){ more.textContent = '已经没有评论了'; more.disabled = true; }
+    }
+  });
+
+  /* ---------- votes ---------- */
+  var upSeq = ['343','344','345','3450','34500','很多','番','够了'], ui = 0;
+  $('#up').addEventListener('click', function(){
+    if (ui < upSeq.length) $('#upN').textContent = upSeq[ui++];
+    if (ui >= upSeq.length) this.disabled = true;
+  });
+  var dn = 3;
+  $('#down').addEventListener('click', function(){
+    dn--; $('#downN').textContent = dn;
+    if (dn <= -3){ $('#downN').textContent = '已记录'; this.disabled = true; }
+  });
+
+  /* ---------- subscribe ---------- */
+  $('#subBtn').addEventListener('click', function(){
+    var v = $('#subIn').value.trim(), msg = $('#subMsg');
+    if (!v){ msg.textContent = '请输入邮箱。或者任何东西。'; return; }
+    msg.textContent = '已订阅。从下周起，我们会在每个周二给你寄一个周二。';
+    $('#subIn').disabled = true; this.disabled = true; this.textContent = '已订阅';
+  });
+
+  /* ---------- toast + share ---------- */
+  var toast = $('#toast'), toastT = 0;
+  function showToast(s){
+    toast.textContent = s; toast.classList.add('on');
+    clearTimeout(toastT); toastT = setTimeout(function(){ toast.classList.remove('on'); }, 2600);
+  }
+  $$('[data-toast]').forEach(function(b){ b.addEventListener('click', function(){ showToast(b.dataset.toast); }); });
+
+  /* ---------- back to top ---------- */
+  function goTop(){ scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); }
+  $('#toTop').addEventListener('click', goTop);
+  $('#nextLink').addEventListener('click', goTop);
+  $('#logo').addEventListener('click', goTop);
+
+  /* ---------- after you come back ---------- */
+  function applyReturned(){
+    returned = true;
+    var s = Math.round((Date.now() - t0) / 1000);
+    $('#readTime').textContent = '你读了 ' + Math.floor(s / 60) + ' 分 ' + (s % 60) + ' 秒';
+    setOrig($('#cap1'), '成品图：酸甜适口，汤汁拌饭一绝。欢迎回来。');
+    setOrig($('#tipText'), '番茄一定要选熟透的，沙瓤的最好。如果番茄不够熟，可以加一小勺番茄酱。另外，你已经和番茄对视过了。');
+    var nr = ['首页','食谱','关于你','联系'];
+    HEAD[0] = {i:'🍅', logo:'小林的厨房', nav:nr, rt:'再读一遍', title:T0};
+    HEAD[1] = {i:'🍅', logo:'小林的厨房', nav:nr, rt:'再读一遍', title:T0};
+    HEAD[2] = {i:'🍅', logo:'小林的厨房', nav:nr, rt:'预计阅读 4 分钟', title:T0};
+    shownLv = -1;
+    addComment({h:12, av:'你', name:'你', time:'刚刚', text:'我回来了。'}, true);
+  }
+
+  /* ---------- loop ---------- */
+  var dirty = true;
+  addEventListener('scroll', function(){ dirty = true; }, {passive:true});
+  addEventListener('resize', function(){ dirty = true; });
+  function loop(){
+    if (dirty || shownLv === 5 || shownLv === 7){ dirty = false; update(); }
+    eyeStep();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"78694dd907a245f5a9176ee8479b2a13","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
